@@ -1,21 +1,21 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Home from './pages/Home'
 import "./App.css";
-import UserViewProducts from './components/viewproducts'
-import UserViewCart from './components/viewmycart'
-import UserViewOrders from './components/myorders'
-import SmartCartLanding from './components/landingpage'
+import UserViewProducts from './components/Viewproducts'
+import UserViewCart from './components/Viewmycart'
+import UserViewOrders from './components/Myorders'
+import SmartCartLanding from './components/Landingpage'
 
 
-import AdminDashboard from './components/Admin/dashboard'
-import AddProducts from './components/Admin/add_products'
-import ViewProducts from './components/Admin/view_products'
-import EditProduct from './components/Admin/editproducts'
-import ViewAllUsers from './components/Admin/viewallusers'
-import ViewOrders from './components/Admin/vieworders'
+import AdminDashboard from './components/Admin/Dashboard'
+import AddProducts from './components/Admin/Add_products'
+import ViewProducts from './components/Admin/View_products'
+import EditProduct from './components/Admin/Editproducts'
+import ViewAllUsers from './components/Admin/Viewallusers'
+import ViewOrders from './components/Admin/Vieworders'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SkinScanner from "./components/SkinScanner";
 
