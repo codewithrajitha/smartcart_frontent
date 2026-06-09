@@ -285,7 +285,7 @@ const SkinScanner = () => {
         darkCircleScore: metricsSnapshot.darkCircleScore
       };
 
-      const response = await axios.post('http://localhost:5000/skin/recommend_local_ai', payload);
+      const response = await axios.post('https://smartcart-server-7qs4.onrender.com/skin/recommend_local_ai', payload);
       
       if (response.data.success) {
         setAiReport(response.data);
@@ -366,7 +366,7 @@ const SkinScanner = () => {
             {aiReport.products.map(prod => (
               <div key={prod._id} style={{ border: '1px solid #ddd', padding: '15px', borderRadius: '8px', background: '#fff', boxShadow: '0 2px 5px rgba(0,0,0,0.05)' }}>
               <img 
-                src={`http://localhost:5000/uploads/${prod.image}`} 
+                src={`https://smartcart-server-7qs4.onrender.com/uploads/${prod.image}`} 
                 alt={prod.name} 
                 style={{ width: '100%', height: '550px', objectFit: 'contain', borderRadius: '4px' }} 
               /> 

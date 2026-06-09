@@ -401,7 +401,7 @@ const EditProduct = () => {
   const fetchSingleProduct = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/productRoutes/getSingleProduct/${id}`
+        `https://smartcart-server-7qs4.onrender.com/productRoutes/getSingleProduct/${id}`
       );
       setProductData(response.data);
     } catch (error) {
@@ -434,7 +434,7 @@ const EditProduct = () => {
         formData.append("image", productData.image);
       }
       const response = await axios.put(
-        `http://localhost:5000/productRoutes/updateProduct/${id}`,
+        `https://smartcart-server-7qs4.onrender.com/productRoutes/updateProduct/${id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -447,7 +447,7 @@ const EditProduct = () => {
   };
 
   const existingImageUrl = typeof productData.image === "string" && productData.image
-    ? `http://localhost:5000/uploads/${productData.image}`
+    ? `https://smartcart-server-7qs4.onrender.com/uploads/${productData.image}`
     : null;
   const displayImage = previewUrl || existingImageUrl;
 

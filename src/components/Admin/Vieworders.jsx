@@ -33,7 +33,7 @@ const ViewOrders = () => {
   const fetchOrders = async () => {
     try {
       setRefreshing(true);
-      const response = await axios.get("http://localhost:5000/orderRoutes/all_orders");
+      const response = await axios.get("https://smartcart-server-7qs4.onrender.com/orderRoutes/all_orders");
       
       const data = response.data.data || response.data;
       setOrders(data);
@@ -75,7 +75,7 @@ const ViewOrders = () => {
   const handleStatusChange = async (orderId, newStatus) => {
     setUpdatingId(orderId);
     try {
-      await axios.put(`http://localhost:5000/orderRoutes/update_order_status/${orderId}`, { status: newStatus });
+      await axios.put(`https://smartcart-server-7qs4.onrender.com/orderRoutes/update_order_status/${orderId}`, { status: newStatus });
       setOrders((prev) =>
         prev.map((o) => (o._id === orderId ? { ...o, status: newStatus } : o))
       );
@@ -90,7 +90,7 @@ const ViewOrders = () => {
   const handlePaymentChange = async (orderId, newPaymentStatus) => {
     setUpdatingId(orderId);
     try {
-      await axios.put(`http://localhost:5000/orders/updatePayment/${orderId}`, { paymentStatus: newPaymentStatus });
+      await axios.put(`https://smartcart-server-7qs4.onrender.com/orders/updatePayment/${orderId}`, { paymentStatus: newPaymentStatus });
       setOrders((prev) =>
         prev.map((o) => (o._id === orderId ? { ...o, paymentStatus: newPaymentStatus } : o))
       );

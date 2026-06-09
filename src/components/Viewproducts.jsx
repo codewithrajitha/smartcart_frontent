@@ -24,7 +24,7 @@ const UserViewProducts = () => {
         try {
             setLoadingProducts(true);
             const response = await axios.get(
-                "http://localhost:5000/users/usergetProducts"
+                "https://smartcart-server-7qs4.onrender.com/users/usergetProducts"
             );
             setProducts(response.data);
         } catch (error) {
@@ -56,7 +56,7 @@ const UserViewProducts = () => {
             setAddingProductId(product._id);
 
             const response = await axios.post(
-                "http://localhost:5000/cartRoutes/addtocart",
+                "https://smartcart-server-7qs4.onrender.com/cartRoutes/addtocart",
                 {
                     userId,
                     productId: product._id
@@ -264,7 +264,7 @@ const UserViewProducts = () => {
                                 {/* Product Image */}
                                 <div style={styles.imageContainer}>
                                     <img
-                                        src={`http://localhost:5000/uploads/${product.image}`}
+                                        src={`https://smartcart-server-7qs4.onrender.com/uploads/${product.image}`}
                                         alt={product.name}
                                         style={styles.image}
                                     />

@@ -22,7 +22,7 @@ const Register = () => {
         e.preventDefault();
 
         const response = await axios.post(
-                "http://localhost:5000/users/register",
+                "https://smartcart-server-7qs4.onrender.com/users/register",
                 formData
             );
 

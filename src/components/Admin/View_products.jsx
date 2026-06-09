@@ -252,7 +252,7 @@ const ViewProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/productRoutes/viewproducts");
+      const response = await axios.get("https://smartcart-server-7qs4.onrender.com/productRoutes/viewproducts");
       setProducts(response.data);
     } catch (err) {
       console.error(err);
@@ -263,7 +263,7 @@ const ViewProducts = () => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
       const response = await axios.delete(
-        `http://localhost:5000/productRoutes/deleteProduct/${id}`
+        `https://smartcart-server-7qs4.onrender.com/productRoutes/deleteProduct/${id}`
       );
       alert(response.data.message);
       fetchProducts();
@@ -355,7 +355,7 @@ const ViewProducts = () => {
                   {/* Image */}
                   <div style={s.imgWrap}>
                     <img
-                      src={`http://localhost:5000/uploads/${product.image}`}
+                      src={`https://smartcart-server-7qs4.onrender.com/uploads/${product.image}`}
                       alt={product.name}
                       style={s.img}
                       onError={(e) => { e.target.style.display = "none"; }}

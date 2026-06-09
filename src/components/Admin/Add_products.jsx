@@ -357,7 +357,7 @@ const AddProducts = () => {
       const formData = new FormData();
       Object.entries(productData).forEach(([k, v]) => formData.append(k, v));
       const response = await axios.post(
-        "http://localhost:5000/productRoutes/add",
+        "https://smartcart-server-7qs4.onrender.com/productRoutes/add",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

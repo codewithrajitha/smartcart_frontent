@@ -421,7 +421,7 @@ const ViewAllUsers = () => {
   const fetchUsers = async () => {
     try {
       setRefreshing(true);
-      const response = await axios.get("http://localhost:5000/users/getAllUsers");
+      const response = await axios.get("https://smartcart-server-7qs4.onrender.com/users/getAllUsers");
       const data = response.data.data || response.data;
       setUsers(data);
       setFilteredUsers(data);

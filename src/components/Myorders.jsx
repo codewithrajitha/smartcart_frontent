@@ -23,7 +23,7 @@ const UserViewOrders = ({ onGoShopping }) => {
         try {
             setLoading(true);
             const response = await axios.get(
-                `http://localhost:5000/orderRoutes/user-orders/${userId}`
+                `https://smartcart-server-7qs4.onrender.com/orderRoutes/user-orders/${userId}`
             );
             setOrders(response.data);
         } catch (error) {
@@ -260,7 +260,7 @@ const UserViewOrders = ({ onGoShopping }) => {
                                             if (!product) return null;
                                             return (
                                                 <div key={idx} style={styles.itemRow}>
-                                                    <img src={`http://localhost:5000/uploads/${product.image}`} alt={product.name} style={styles.itemImage} />
+                                                    <img src={`https://smartcart-server-7qs4.onrender.com/uploads/${product.image}`} alt={product.name} style={styles.itemImage} />
                                                     <div style={styles.itemDetails}>
                                                         <h4 style={styles.itemName}>{product.name}</h4>
                                                         <p style={styles.itemCategory}>{product.category}</p>

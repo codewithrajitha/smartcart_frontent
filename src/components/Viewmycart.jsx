@@ -33,7 +33,7 @@ const UserViewCart = ({ onContinueShopping }) => {
         try {
             setLoading(true);
             const response = await axios.get(
-                `http://localhost:5000/cartRoutes/getcartproducts/${userId}`
+                `https://smartcart-server-7qs4.onrender.com/cartRoutes/getcartproducts/${userId}`
             );
             setCartItems(response.data);
         } catch (error) {
@@ -124,7 +124,7 @@ const UserViewCart = ({ onContinueShopping }) => {
 
             // 2. Create Razorpay Payment Order on Backend (in paise)
             const rzpOrderResponse = await axios.post(
-                "http://localhost:5000/orderRoutes/create-payment-order",
+                "https://smartcart-server-7qs4.onrender.com/orderRoutes/create-payment-order",
                 { amount: total }
             );
 
@@ -158,7 +158,7 @@ const UserViewCart = ({ onContinueShopping }) => {
 
                         // Verify signature and store order details in Mongoose Order Schema
                         const verificationResponse = await axios.post(
-                            "http://localhost:5000/orderRoutes/verify-payment",
+                            "https://smartcart-server-7qs4.onrender.com/orderRoutes/verify-payment",
                             verificationPayload
                         );
 
@@ -272,7 +272,7 @@ const UserViewCart = ({ onContinueShopping }) => {
                                 return (
                                     <div key={item._id} style={styles.card}>
                                         <img
-                                            src={`http://localhost:5000/uploads/${product.image}`}
+                                            src={`https://smartcart-server-7qs4.onrender.com/uploads/${product.image}`}
                                             alt={product.name}
                                             style={styles.image}
                                         />
