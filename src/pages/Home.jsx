@@ -147,7 +147,7 @@ export default function Home() {
     setIsTyping(true);
 
     try {
-      const response = await fetch('http://localhost:5000/chat/chat', {
+      const response = await fetch('https://smartcart-server-7qs4.onrender.com/chat/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
