@@ -10,7 +10,9 @@ const UserViewOrders = ({ onGoShopping }) => {
     const [receiptOrder, setReceiptOrder] = useState(null);
 
     const userId = localStorage.getItem("userId");
-
+const userName = localStorage.getItem("userName");
+const userEmail = localStorage.getItem("userEmail");
+const userAddress = localStorage.getItem("userAddress");
     useEffect(() => {
         if (userId) {
             fetchOrders();
@@ -117,13 +119,13 @@ const UserViewOrders = ({ onGoShopping }) => {
         y += 18;
 
         // Customer Info
-        doc.text("Billed To:", 20, y);
-        y += 8;
-        doc.text("Customer Name", 20, y);
-        y += 7;
-        doc.text("customer@example.com", 20, y);
-        y += 7;
-        doc.text("123 Beauty Lane, Mumbai", 20, y);
+        doc.text(userName || "N/A", 20, y);
+y += 7;
+
+doc.text(userEmail || "N/A", 20, y);
+y += 7;
+
+doc.text(userAddress || "N/A", 20, y);
         y += 18;
 
         // Items
@@ -362,9 +364,10 @@ const UserViewOrders = ({ onGoShopping }) => {
 
                             <div style={styles.receiptInfo}>
                                 <div>
-                                    <strong>Billed To:</strong><br />
-                                    Customer Name<br />
-                                    customer@example.com
+                                  <strong>Billed To:</strong><br />
+{userName}<br />
+{userEmail}<br />
+{userAddress}
                                 </div>
                                 <div style={{ textAlign: "right" }}>
                                     <strong>Status:</strong><br />
